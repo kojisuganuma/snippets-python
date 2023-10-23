@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "snippets-python"
+version = "1.0.0"
+description = ""
+authors = ["kojisuganuma <kojisuganuma93@gmail.com>"]
+readme = "README.md"
+packages = [{include = "snippets_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^4.1.0"
+black = "^23.10.0"
+isort = "^5.12.0"
+pre-commit = "^3.5.0"
+pytest = "^7.4.2"
+pyproject-flake8 = "^6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
