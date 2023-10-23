@@ -61,7 +61,7 @@ jobs:
         env:
           STATUS: "${{ (steps.lint.outcome == 'failure' || steps.test.outcome == 'failure') && ':broken_heart: :boom: :cold_sweat: Some failed!' || ':white_check_mark: :tada: :smile: All passed!' }}"
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.SNIPPETS_GITHUB_TOKEN_20240331 }}
           script: |
             const env = process.env
             const output = `
