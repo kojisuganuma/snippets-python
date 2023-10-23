@@ -2,6 +2,15 @@ import json
 import logging
 
 
+class TextFormatter(logging.Formatter):
+    def __init__(
+        self,
+        fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        datefmt=None,
+    ):
+        super().__init__(fmt, datefmt)
+
+
 class JSONFormatter(logging.Formatter):
     def format(self, record):
         log_record = {
@@ -18,15 +27,18 @@ class JSONFormatter(logging.Formatter):
         return json.dumps(log_record, ensure_ascii=False)
 
 
-def get_json_logger(
-    name: str, level=logging.DEBUG, output_to_file: bool = False
+def get_logger(
+    name: str,
+    formatter: logging.Formatter = TextFormatter,
+    level=logging.DEBUG,
+    output_to_file: bool = False,
 ) -> logging.Logger:
     # ロガーの設定
     logger = logging.getLogger(name)
     logger.setLevel(level)
 
-    # JSONフォーマットの設定
-    formatter = JSONFormatter()
+    # フォーマットの設定
+    formatter = formatter()
 
     # コンソールへの出力設定
     ch = logging.StreamHandler()
