@@ -14,4 +14,4 @@ format:
 	poetry run black snippets_python/
 
 test:
-	poetry run pytest -vv -m "not integration" --cov=snippets_python/ --cov-report=term-missing
+	poetry run pytest -vv --cov=snippets_python/ --cov-report=term-missing
