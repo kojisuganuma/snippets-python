@@ -1,10 +1,10 @@
 import logging
 
-from snippets_python.logging.logger import get_json_logger
+from snippets_python.logging.logger import get_logger
 
 
 def main():
-    logger = get_json_logger(__name__, level=logging.INFO)
+    logger = get_logger(__name__, level=logging.INFO)
 
     logger.debug("Debug message")
     logger.info("Information message")
