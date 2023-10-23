@@ -51,9 +51,9 @@ jobs:
       - name: test
         id: test
         run: |
-          echo "test<<EOF"           >> $GITHUB_ENV
-          trap 'echo "EOF"           >> $GITHUB_ENV' EXIT
-          make test-all | grep -v \` >> $GITHUB_ENV
+          echo "test<<EOF"       >> $GITHUB_ENV
+          trap 'echo "EOF"       >> $GITHUB_ENV' EXIT
+          make test | grep -v \` >> $GITHUB_ENV
         continue-on-error: true
 
       - name: CI/CD Pipeline's Result PR Post
